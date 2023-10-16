@@ -1,8 +1,5 @@
-<<<<<<<< HEAD:Tarea-2-P2/src/main/java/codigo/Deposito.java
+
 package codigo;
-========
-package Código;
->>>>>>>> ramaAlan:Tarea-2-P2/src/main/java/Código/Deposito.java
 
 import java.util.ArrayList;
 

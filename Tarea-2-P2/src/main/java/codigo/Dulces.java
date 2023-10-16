@@ -1,8 +1,18 @@
 package codigo;
 
-abstract public class Dulces extends Productos{
-    public Dulces(String nombre, Precios precio) {
-        super(nombre, precio);
+public class Dulces extends Producto {
+    private int serie;
+    private String comida;
+
+    public Dulces(int serie){
+        this.serie = serie;
     }
-    public abstract String getSabor();
+    //get and Set
+    public int getSerie() {
+        return serie;
+    }
+    //Metodos de las clases
+    public String sabor(){
+        return "dulce";
+    }
 }

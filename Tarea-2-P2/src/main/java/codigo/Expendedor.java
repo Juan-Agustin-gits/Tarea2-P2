@@ -1,18 +1,31 @@
 package codigo;
 
 public class Expendedor {
-    private int cantidadProductos;
-    private int precioBebidas; //multiplos de 100(hacer Excepciones de estas variables)
-    private int precioDulces;
-    private Monedas pago;
+    private CocaCola zero = new CocaCola(1);
+    private Sprite sinAzucar = new Sprite(3);
 
-    public Expendedor(int cantidadProductos,int precioBebidas,int precioDulces,Monedas pago) {
-        this.cantidadProductos = cantidadProductos;
-        this.precioBebidas = precioBebidas;
-        this.precioDulces = precioDulces;
-        this.pago = pago;
-        // hacer excepcion en caso de que la moneda fuera igual a NULL PagoIncorrectoException
+    Deposito coca,sprite,monVu;
+    public Expendedor(int a){
+        coca = new Deposito();
+        sprite = new Deposito();
+        monVu = new Deposito();
+        for(int i=100; i<a+100; i++){
+            Bebida b = new CocaCola(i);
+            coca.addProducto(b);
+        }
+        for(int i=200; i<a+200; i++){
+            Bebida b = new Sprite(i);
+            sprite.addProducto(b);
+        }
     }
-    //Hacer metodo para comprar productos
+    public Producto comprarProducto(Monedas CLP, int seleccion){
+        if(seleccion == 1){
+            return (Producto) coca.getProducto(); //el (producto lo recomendó intelij
+        }else if(seleccion == 2){
+            return (Producto) sprite.getProducto();
+        }
+        return null;
 
+
+    }
 }
