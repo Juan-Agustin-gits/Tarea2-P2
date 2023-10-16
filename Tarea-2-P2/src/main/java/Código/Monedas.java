@@ -1,8 +1,5 @@
-<<<<<<<< HEAD:Tarea-2-P2/src/main/java/codigo/Monedas.java
-package codigo;
-========
+
 package Código;
->>>>>>>> ramaAlan:Tarea-2-P2/src/main/java/Código/Monedas.java
 
 public enum Monedas{
     Moneda1500(1500),
