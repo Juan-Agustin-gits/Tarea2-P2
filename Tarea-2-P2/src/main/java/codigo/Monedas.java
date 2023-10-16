@@ -1,4 +1,5 @@
-package Código;
+
+package codigo;
 
 public enum Monedas{
     Moneda1500(1500),
