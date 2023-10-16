@@ -3,12 +3,11 @@ package codigo;
 abstract public class Productos {
     private String Nombre;
     private Precios precio;
-    private String Sabor;
+    private String sabor;
 
-    public Productos(String nombre, Precios precio, String sabor) {
+    public Productos(String nombre, Precios precio) {
         Nombre = nombre;
         this.precio = precio;
-        Sabor = sabor;
     }
 
     public String getNombre() {

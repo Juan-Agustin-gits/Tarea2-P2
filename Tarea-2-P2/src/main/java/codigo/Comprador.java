@@ -9,5 +9,7 @@ public class Comprador {
         this.moneda = moneda;
         this.numIdent = numIdent;
         this.expendedor = expendedor;
+        //comprar en el expendedor
+
     }
 }

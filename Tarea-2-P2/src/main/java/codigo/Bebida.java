@@ -1,12 +1,10 @@
 package codigo;
 
-class Bebida extends Productos{
-    public Bebida(String nombre,Precios precio, String sabor) {
-        super(nombre,precio,sabor);
+abstract class Bebida extends Productos{
+    public Bebida(String nombre,Precios precio) {
+        super(nombre,precio);
     }
 
     @Override
-    public String getSabor() {
-        return null;
-    }
+    public abstract String getSabor();
 }

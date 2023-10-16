@@ -14,4 +14,5 @@ public class Expendedor {
         // hacer excepcion en caso de que la moneda fuera igual a NULL PagoIncorrectoException
     }
     //Hacer metodo para comprar productos
+
 }
