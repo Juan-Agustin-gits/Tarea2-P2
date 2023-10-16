@@ -1,4 +1,4 @@
-package Expendedor;
+package Código;
 
 public class Sprite extends Bebida {
     public Sprite(int serie) {
@@ -6,7 +6,7 @@ public class Sprite extends Bebida {
     }
 
     @Override
-    public String beber() {
+    public String sabor() {
         return "sprite";
     }
 }

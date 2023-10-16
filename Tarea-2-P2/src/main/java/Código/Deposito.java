@@ -1,17 +1,17 @@
-package Expendedor;
+package Código;
 
 import java.util.ArrayList;
 
-public class Deposito {
-    private ArrayList<Bebida> array;
+public class Deposito<T>{
+    private ArrayList<T> array;
     public Deposito(){
         array = new ArrayList();
     }
 
-    public void addBebida(Bebida nueva) {
+    public void addProducto(T nueva) {
         array.add(nueva);
     }
-    public Bebida getBebida(){
+    public T getProducto(){ //pese a que es getproducto tmbn puede servir como get moneda
         if (array.size() != 0) {
             return array.remove(0);
         }

@@ -1,4 +1,4 @@
-package Expendedor;
+package Código;
 
 public class Comprador {
 

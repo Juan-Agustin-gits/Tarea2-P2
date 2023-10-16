@@ -1,6 +1,6 @@
-package Expendedor;
+package Código;
 
-abstract class Bebida {
+abstract class Bebida extends Producto {
     private int serie;
     public Bebida(int serie){
         this.serie = serie;
@@ -8,5 +8,5 @@ abstract class Bebida {
     public int getSerie(){
         return serie;
     }
-    public abstract String beber();
+    public abstract String sabor();
 }

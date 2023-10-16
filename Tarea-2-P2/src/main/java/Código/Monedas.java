@@ -1,6 +1,6 @@
-package Expendedor;
+package Código;
 
-public enum Monedas {
+public enum Monedas{
     Moneda1500(1500),
     Moneda1000(1000),
     Moneda500(500),
