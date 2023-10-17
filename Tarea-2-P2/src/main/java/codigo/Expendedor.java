@@ -9,6 +9,7 @@ public class Expendedor {
     private Deposito<Sprite> sprite = new Deposito<>();
     private Deposito<Super8> super8 = new Deposito<>();
     private Deposito<Snikers> sniker = new Deposito<>();
+    private Deposito<Monedas> monvu = new Deposito<>();
 //en el constr. hay que cambiar los precios
     public Expendedor(int cantidadProductos,int precioBebidas,int precioDulces,Monedas pago) {
         this.cantidadProductos = cantidadProductos;
@@ -28,24 +29,37 @@ public class Expendedor {
     public Productos comprarProducto(int n){
         if (n==1){
             if(coca.size()!=0&&pago.getValor()>=precioBebidas){
+                for(int i=precioBebidas; i>0; i=i-100 ){
+                    monvu.addProducto(Monedas.Moneda100);
+                }
                 return coca.getProducto();
             }
+
 
         }
         if (n==2){
             if(sprite.size()!=0&&pago.getValor()>=precioBebidas){
+                for(int i=precioBebidas; i>0; i=i-100 ){
+                    monvu.addProducto(Monedas.Moneda100);
+                }
                 return sprite.getProducto();
             }
 
         }
         if (n==3){
             if(super8.size()!=0&&pago.getValor()>=precioDulces){
+                for(int i=precioDulces; i>0; i=i-100 ){
+                    monvu.addProducto(Monedas.Moneda100);
+                }
                 return super8.getProducto();
             }
 
         }
         if (n==4){
             if(sniker.size()!=0&&pago.getValor()>=precioDulces){
+                for(int i=precioDulces; i>0; i=i-100 ){
+                    monvu.addProducto(Monedas.Moneda100);
+                }
                 return sniker.getProducto();
             }
 
