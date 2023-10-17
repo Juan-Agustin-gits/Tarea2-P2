@@ -5,6 +5,7 @@ public class Expendedor {
     private int precioBebidas; //multiplos de 100(hacer Excepciones de estas variables)
     private int precioDulces;
     private Monedas pago;
+    private int vuelto = 0;
     private Deposito<CocaCola> coca = new Deposito<>();
     private Deposito<Sprite> sprite = new Deposito<>();
     private Deposito<Super8> super8 = new Deposito<>();
@@ -29,8 +30,9 @@ public class Expendedor {
     public Productos comprarProducto(int n){
         if (n==1){
             if(coca.size()!=0&&pago.getValor()>=precioBebidas){
-                for(int i=precioBebidas; i>0; i=i-100 ){
+                for(int i=pago.getValor()-precioBebidas; i>0; i=i-100 ){
                     monvu.addProducto(Monedas.Moneda100);
+                    vuelto=vuelto+100;
                 }
                 return coca.getProducto();
             }
@@ -39,8 +41,9 @@ public class Expendedor {
         }
         if (n==2){
             if(sprite.size()!=0&&pago.getValor()>=precioBebidas){
-                for(int i=precioBebidas; i>0; i=i-100 ){
+                for(int i= pago.getValor()-precioBebidas; i>0; i=i-100 ){
                     monvu.addProducto(Monedas.Moneda100);
+                    vuelto=vuelto+100;
                 }
                 return sprite.getProducto();
             }
@@ -48,8 +51,9 @@ public class Expendedor {
         }
         if (n==3){
             if(super8.size()!=0&&pago.getValor()>=precioDulces){
-                for(int i=precioDulces; i>0; i=i-100 ){
+                for(int i= pago.getValor()-precioDulces; i>0; i=i-100 ){
                     monvu.addProducto(Monedas.Moneda100);
+                    vuelto=vuelto+100;
                 }
                 return super8.getProducto();
             }
@@ -57,15 +61,21 @@ public class Expendedor {
         }
         if (n==4){
             if(sniker.size()!=0&&pago.getValor()>=precioDulces){
-                for(int i=precioDulces; i>0; i=i-100 ){
+                for(int i= pago.getValor()-precioDulces; i>0; i=i-100 ){
                     monvu.addProducto(Monedas.Moneda100);
+                    vuelto=vuelto+100;
                 }
                 return sniker.getProducto();
             }
 
         }
+        else{
+            return null;
+        }
         return null;
     }
     //Hacer metodo para comprar productos
-
+    public int getVuelto() {
+        return vuelto;
+    }
 }
