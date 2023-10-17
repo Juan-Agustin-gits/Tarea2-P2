@@ -1,12 +1,10 @@
 package codigo;
-
-public class CocaCola extends Bebida {
-    public CocaCola(int serie) {
-        super(serie);
+public class CocaCola extends Bebida{
+    public CocaCola(int n, int m) {
+        super(n,m);
     }
-
     @Override
-    public String sabor() {
+    public String getSabor() {
         return "cocacola";
     }
 }

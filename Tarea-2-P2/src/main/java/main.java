@@ -3,6 +3,10 @@
 //como pruebas las excepciones deben ser levantada y capturada también (en este caso se muestra un
 //mensaje)
 
-public class main {
+import codigo.Comprador;
 
+public class main {
+    public static void main(String[] args){
+        Comprador comprador = new Comprador();
+    }
 }

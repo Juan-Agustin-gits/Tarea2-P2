@@ -10,4 +10,8 @@ public enum Monedas{
     Monedas(int valor) {
         this.valor = valor;
     }
+
+    public int getValor() {
+        return valor;
+    }
 }

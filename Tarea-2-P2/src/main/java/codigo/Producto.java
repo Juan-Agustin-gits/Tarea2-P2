@@ -1,5 +1,5 @@
 package codigo;
 
 abstract public class Producto {
-    public abstract String sabor();
+    public abstract String getSabor();
 }

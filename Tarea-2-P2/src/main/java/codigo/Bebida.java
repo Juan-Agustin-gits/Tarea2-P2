@@ -1,12 +1,8 @@
 package codigo;
 
-abstract class Bebida extends Producto {
-    private int serie;
-    public Bebida(int serie){
-        this.serie = serie;
+abstract class Bebida extends Productos{
+    public Bebida(int n, int m) {
+        super(n, m);
     }
-    public int getSerie(){
-        return serie;
-    }
-    public abstract String sabor();
+    public abstract String getSabor();
 }
