@@ -1,8 +1,8 @@
 package codigo;
 
 public class CocaCola extends Bebida{
-    public CocaCola(String nombre, Precios precio) {
-        super(nombre, precio);
+    public CocaCola(int n, int m) {
+        super(n,m);
     }
 
     @Override

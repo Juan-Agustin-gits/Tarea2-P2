@@ -1,12 +1,14 @@
 package codigo;
 
 public class Snikers extends Dulces{
-    public Snikers(String nombre, Precios precio) {
-        super(nombre, precio);
+
+    public Snikers(int n,int m) {
+        super(n,m);
     }
 
     @Override
     public String getSabor() {
         return "Snikers";
     }
+
 }

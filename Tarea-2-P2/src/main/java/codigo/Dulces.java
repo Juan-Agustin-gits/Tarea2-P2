@@ -1,8 +1,8 @@
 package codigo;
 
 abstract public class Dulces extends Productos{
-    public Dulces(String nombre, Precios precio) {
-        super(nombre, precio);
+    public Dulces(int n, int m) {
+        super(n, m);
     }
     public abstract String getSabor();
 }
