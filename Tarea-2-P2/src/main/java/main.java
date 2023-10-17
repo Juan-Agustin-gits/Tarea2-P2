@@ -7,6 +7,6 @@ import codigo.Comprador;
 
 public class main {
     public static void main(String[] args){
-        Comprador comprador = new Comprador();
+        //Falta hacer las pruebas aqui y hacer los test correspondientes
     }
 }
