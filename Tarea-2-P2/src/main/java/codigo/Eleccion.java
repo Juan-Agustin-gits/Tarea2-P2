@@ -16,4 +16,8 @@ public enum Eleccion {
     public int getPrecio() {
         return precio;
     }
+
+    public int getSelec() {
+        return selec;
+    }
 }
