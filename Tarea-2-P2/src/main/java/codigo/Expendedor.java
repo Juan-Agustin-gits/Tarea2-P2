@@ -7,6 +7,7 @@ public class Expendedor {
     private int vuelto = 0;
     private Deposito<CocaCola> coca = new Deposito<>();
     private Deposito<Sprite> sprite = new Deposito<>();
+    private Deposito<Fanta> fanta = new Deposito<>();
     private Deposito<Super8> super8 = new Deposito<>();
     private Deposito<Snikers> sniker = new Deposito<>();
     private Deposito<Monedas> monvu = new Deposito<>();
@@ -16,6 +17,7 @@ public class Expendedor {
         for (int n=0; n<cantidadProductos; n++){
             coca.addProducto(new CocaCola(n));
             sprite.addProducto(new Sprite(n));
+            fanta.addProducto(new Fanta(n));
             super8.addProducto(new Super8(n));
             sniker.addProducto(new Snikers(n));
         }
@@ -57,6 +59,22 @@ public class Expendedor {
             }
         }
         if (n==3){
+            if(fanta.size()!=0&&pago.getValor()>=fanta.getProducto().getPrecio()){
+                for(int i= pago.getValor()-fanta.getProducto().getPrecio(); i>0; i=i-100 ){
+                    monvu.addProducto(moneda100);
+                    vuelto=vuelto+100;
+                }
+                return fanta.getProducto();
+            }
+            else if (super8.size() == 0) {
+                throw new NoHayProductoException("No se puede comprar, no quedan productos");
+            }
+            else if (pago.getValor() < super8.getProducto().getPrecio()) {
+                throw new PagoInsuficienteException("La moneda NO alcanza");
+            }
+
+        }
+        if (n==4){
             if(super8.size()!=0&&pago.getValor()>=super8.getProducto().getPrecio()){
                 for(int i= pago.getValor()-super8.getProducto().getPrecio(); i>0; i=i-100 ){
                     monvu.addProducto(moneda100);
@@ -72,7 +90,7 @@ public class Expendedor {
             }
 
         }
-        if (n==4){
+        if (n==5){
             if(sniker.size()!=0&&pago.getValor()>=sniker.getProducto().getPrecio()){
                 for(int i= pago.getValor()-sniker.getProducto().getPrecio(); i>0; i=i-100 ){
                     monvu.addProducto(moneda100);
