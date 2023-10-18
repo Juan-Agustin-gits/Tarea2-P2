@@ -1,6 +1,7 @@
 package codigo;
 
 public class Expendedor {
+    private int n;
     private int cantidadProductos;
     private Monedas pago;
     private Moneda100 moneda100;
@@ -24,11 +25,11 @@ public class Expendedor {
         // hacer excepcion en caso de que la moneda fuera igual a NULL PagoIncorrectoException
     }
     public Productos comprarProducto(int n, Monedas pago) throws PagoIncorrectoException, NoHayProductoException, PagoInsuficienteException {
+        this.n=n;
         if (pago == null) {
             throw new PagoIncorrectoException("Por favor ingresa una moneda valida");
         }
-    //EL n de comprarProducto debe cambiarse por un enum (creo que solo era para el valor)
-        if (n==1){
+        if (n==Eleccion.COCA.getSelec()){
             if(coca.size()!=0&&pago.getValor()>=coca.getProducto().getPrecio()){
                 for(int i=pago.getValor()-coca.getProducto().getPrecio(); i>0; i=i-100 ){
                     monvu.addProducto(moneda100);
@@ -43,7 +44,7 @@ public class Expendedor {
                 throw new PagoInsuficienteException("La moneda NO alcanza");
             }
         }
-        if (n==2){
+        if (n==Eleccion.SPRITE.getSelec()){
             if(sprite.size()!=0&&pago.getValor()>=sprite.getProducto().getPrecio()){
                 for(int i= pago.getValor()-sprite.getProducto().getPrecio(); i>0; i=i-100 ){
                     monvu.addProducto(moneda100);
@@ -58,7 +59,7 @@ public class Expendedor {
                 throw new PagoInsuficienteException("La moneda NO alcanza");
             }
         }
-        if (n==3){
+        if (n==Eleccion.FANTA.getSelec()){
             if(fanta.size()!=0&&pago.getValor()>=fanta.getProducto().getPrecio()){
                 for(int i= pago.getValor()-fanta.getProducto().getPrecio(); i>0; i=i-100 ){
                     monvu.addProducto(moneda100);
@@ -74,7 +75,7 @@ public class Expendedor {
             }
 
         }
-        if (n==4){
+        if (n==Eleccion.SUPER.getSelec()){
             if(super8.size()!=0&&pago.getValor()>=super8.getProducto().getPrecio()){
                 for(int i= pago.getValor()-super8.getProducto().getPrecio(); i>0; i=i-100 ){
                     monvu.addProducto(moneda100);
@@ -90,7 +91,8 @@ public class Expendedor {
             }
 
         }
-        if (n==5){
+        //en vez de poner sniker.getProducto().getPrecio() podríamos poner Eleccion.SUPER.getPrecio()
+        if (n==Eleccion.SNICKERS.getSelec()){
             if(sniker.size()!=0&&pago.getValor()>=sniker.getProducto().getPrecio()){
                 for(int i= pago.getValor()-sniker.getProducto().getPrecio(); i>0; i=i-100 ){
                     monvu.addProducto(moneda100);
@@ -110,7 +112,10 @@ public class Expendedor {
         }
         return null;
     }
-    public int getVuelto() {
+    public Monedas getVuelto() {
+        return monvu.getProducto();
+    }
+    public int getVueltoTotal(){
         return vuelto;
     }
 }

@@ -3,9 +3,8 @@ public class CocaCola extends Bebida{
     public CocaCola(int n) {
         super(n);
     }
-    private Precios precio1000;
     public int getPrecio(){
-        return Precios.Precio1000.getValor();
+        return Eleccion.COCA.getPrecio();
     }
     @Override
     public String getSabor() {

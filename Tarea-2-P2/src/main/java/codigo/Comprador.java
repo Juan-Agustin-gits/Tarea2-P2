@@ -3,16 +3,13 @@ package codigo;
 public class Comprador {
     private Monedas moneda;
     //aca debo cambiar el nimIdent
-    private int numIdent;
+    private int nimIdent;
     private Expendedor expendedor;
 
-    public Comprador(Monedas moneda, int numIdent, Expendedor expendedor) throws NoHayProductoException, PagoInsuficienteException, PagoIncorrectoException {
+    public Comprador(Monedas moneda,int nimIdent , Expendedor expendedor) throws NoHayProductoException, PagoInsuficienteException, PagoIncorrectoException {
         this.moneda = moneda;
-        this.numIdent = numIdent;
+        this.nimIdent=nimIdent;
         this.expendedor = expendedor;
-        expendedor.comprarProducto(numIdent,moneda);
-    }
-    public Comprador(){
-
+        expendedor.comprarProducto(nimIdent,moneda);
     }
 }

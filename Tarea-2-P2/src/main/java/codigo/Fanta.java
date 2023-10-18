@@ -4,9 +4,8 @@ public class Fanta extends Bebida{
     public Fanta(int n){
         super(n);
     }
-    private Precios precio1000;
-    public int getPrecio() {
-        return Precios.Precio1000.getValor();
+    public int getPrecio(){
+        return Eleccion.FANTA.getPrecio();
     }
 
     @Override
