@@ -5,12 +5,13 @@ public class Comprador {
     //aca debo cambiar el nimIdent
     private Eleccion eleccion;
     private Expendedor expendedor;
+    private int n;
 
-    public Comprador(Monedas moneda,Eleccion eleccion , Expendedor expendedor) throws NoHayProductoException, PagoInsuficienteException, PagoIncorrectoException {
+    public Comprador(Monedas moneda,int n, Expendedor expendedor) throws NoHayProductoException, PagoInsuficienteException, PagoIncorrectoException {
         this.moneda = moneda;
-        this.eleccion=eleccion;
+        this.n=n;
         this.expendedor = expendedor;
-        expendedor.comprarProducto(eleccion,moneda);
+        expendedor.comprarProducto(n,moneda);
     }
     public Comprador(){
 
