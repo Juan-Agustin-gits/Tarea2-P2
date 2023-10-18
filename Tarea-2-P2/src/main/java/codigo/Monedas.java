@@ -4,7 +4,7 @@ package codigo;
 public abstract class Monedas implements Comparable<Monedas>{
     private int valor;
 
-    Monedas(int valor) {
+    public Monedas(int valor) {
         this.valor = valor;
     }
 
