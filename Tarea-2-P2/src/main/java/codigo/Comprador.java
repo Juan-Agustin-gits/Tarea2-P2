@@ -33,38 +33,21 @@ public class Comprador {
     public Monedas getMoneda() {
         return moneda;
     }
-
-    /**
-     * @return elccion de el comprador
-     */
+    
     public int getNimIdent() {
         return nimIdent;
     }
-
-    /**
-     * @return Expendedor
-     */
     public Expendedor getExpendedor() {
         return expendedor;
     }
 
-    /**
-     * @return productoComprado
-     */
     public Productos getProductoComprado() {
         return productoComprado;
     }
 
-    /**
-     * @return vuelto de el comprador
-     */
     public int getVuelto(){
         return vuelto;
     }
-
-    /**
-     * @return  Sabor de el producto
-     */
     public String getSabor(){
         return productoComprado.getSabor();
     }
