@@ -1,7 +1,6 @@
 package codigo;
-
 /**
- * Clase Moneda1500. extends de Monedas
+ * Herencia de Moneda con valor 1500
  */
 public class Moneda1500 extends Monedas{
     /**

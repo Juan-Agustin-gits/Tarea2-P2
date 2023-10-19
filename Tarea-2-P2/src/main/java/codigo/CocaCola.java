@@ -1,4 +1,8 @@
 package codigo;
+
+/**
+ * Herencia de Bebida con sabor "cocacola"
+ */
 public class CocaCola extends Bebida{
     public CocaCola(int n) {
         super(n);

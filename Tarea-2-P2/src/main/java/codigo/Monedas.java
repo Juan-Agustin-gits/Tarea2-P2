@@ -2,7 +2,7 @@
 package codigo;
 
 /**
- * Clase abstracta Monedas, implementa la interfaz Comparable
+ * Clase abstracta que define con lo que se va a comprar a futuro un Producto
  */
 public abstract class Monedas implements Comparable<Monedas>{
     private int valor;
@@ -13,12 +13,10 @@ public abstract class Monedas implements Comparable<Monedas>{
     public Monedas(int valor) {
         this.valor = valor;
     }
-
     /**
      * @return Valor de la moneda
      */
     public abstract int getValor();
-
     /**
      * @param otra ( de tipo Moneda ), Objeto a comparar .
      * @return retorna 1 si this.getValor() >  otra.getValor();

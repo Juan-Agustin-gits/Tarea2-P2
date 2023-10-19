@@ -4,7 +4,7 @@ package codigo;
 import java.util.ArrayList;
 
 /**
- * @param <T> Array generico que se usa como deposito
+ * @param <T> Un tipo T generico que permite tener diferentes depositos de varios tipos
  */
 public class Deposito<T> {
     private ArrayList<T> array;

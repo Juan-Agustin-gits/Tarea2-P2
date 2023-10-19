@@ -1,7 +1,7 @@
 package codigo;
 
 /**
- * Clase Expendedor
+ * Clase que instancia multiples Depositos de diferentes Productos
  */
 public class Expendedor {
     private int n;
@@ -17,9 +17,9 @@ public class Expendedor {
     private Deposito<Monedas> monvu = new Deposito<>();
 
     /**
-     * @param cantidadProductos
+     *
+     * @param cantidadProductos define el tamaño de cada Deposito instanciado
      */
-    //y si la moneda de pago no es la misma que la moneda del cliente??
     public Expendedor(int cantidadProductos) {
         this.cantidadProductos = cantidadProductos;
         for (int n=0; n<cantidadProductos; n++){
@@ -29,16 +29,20 @@ public class Expendedor {
             super8.addProducto(new Super8(n));
             sniker.addProducto(new Snikers(n));
         }
-        // hacer excepcion en caso de que la moneda fuera igual a NULL PagoIncorrectoException
     }
 
     /**
-     * @param n es la eleccion
-     * @param pago Moneda con la que se paga la compra
-     * @return Producto que se compra
-     * @throws PagoIncorrectoException
-     * @throws NoHayProductoException
-     * @throws PagoInsuficienteException
+     *
+     * @param n numero del cual dependera el producto a ser "comprado"
+     * @param pago moneda con valor especifico que se comparará con el valor
+     * del producto a seleccionar
+     * @throws PagoIncorrectoException Exception para cuando se elija una moneda nula
+     * @throws NoHayProductoException Excepction para cuando no haya productos del tipo
+     * seleccionado en su respectivo array
+     * @throws PagoInsuficienteException Exception para cuando el valor de la moneda
+     * seleccionada sea menor al del producto elegido
+     * @return Devuelve el Producto y el vuelto o la misma moneda si es que no es mayor
+     * o igual al precio del Producto o nulo si es que no quedan Productos en el deposito
      */
     public Productos comprarProducto(int n, Monedas pago) throws PagoIncorrectoException, NoHayProductoException, PagoInsuficienteException {
         this.n=n;

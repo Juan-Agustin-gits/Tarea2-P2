@@ -1,8 +1,8 @@
 package codigo;
 
 /**
- * Clase Snikers, extends de Dulces
- */
+ * Herencia de Dulces con sabor "snikers"
+ * */
 public class Snikers extends Dulces{
 
     /**
@@ -24,7 +24,7 @@ public class Snikers extends Dulces{
      */
     @Override
     public String getSabor() {
-        return "Snikers";
+        return "snikers";
     }
 
 }

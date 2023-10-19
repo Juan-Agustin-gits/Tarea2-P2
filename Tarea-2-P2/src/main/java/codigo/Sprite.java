@@ -1,7 +1,7 @@
 package codigo;
 
 /**
- * Clase Sprite, extends de Bebida
+ * Herencia de Bebida con sabor "sprite"
  */
 public class Sprite extends Bebida{
     /**

@@ -1,7 +1,8 @@
 package codigo;
 
 /**
- * Excepcion NoHayProducto
+ * Excepction para cuando no haya productos del tipo
+ * seleccionado en su respectivo array
  */
 public class NoHayProductoException extends Exception{
     /**

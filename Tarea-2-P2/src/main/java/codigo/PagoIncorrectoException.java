@@ -1,7 +1,7 @@
 package codigo;
 
 /**
- * Excepcion PagoIncorrecto
+ * Exception para cuando se elija una moneda nula
  */
 public class PagoIncorrectoException extends Exception{
     /**
