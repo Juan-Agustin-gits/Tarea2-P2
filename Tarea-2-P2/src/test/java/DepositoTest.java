@@ -11,6 +11,11 @@ public class DepositoTest {
         //para hacer esta prueba usamos una bebida generica
         Bebida generica = new Bebida(1234) {
             @Override
+            public int getPrecio() {
+                return 0;
+            }
+
+            @Override
             public String getSabor() {
                 return "generica";
             }
@@ -18,11 +23,16 @@ public class DepositoTest {
         Deposito<Bebida> bebidaDeposito = new Deposito<>();
         bebidaDeposito.addProducto(generica);
         int cantidad = bebidaDeposito.size();
-        Assertions.assertNotEquals(0,cantidad);
+        Assertions.assertEquals(1,cantidad);
     }
     @Test
     public void testAddProductoDulces(){
         Dulces generico = new Dulces(4321) {
+            @Override
+            public int getPrecio() {
+                return 0;
+            }
+
             @Override
             public String getSabor() {
                 return "generico";
@@ -31,20 +41,23 @@ public class DepositoTest {
         Deposito<Dulces> dulcesDeposito = new Deposito<>();
         dulcesDeposito.addProducto(generico);
         int cantidad = dulcesDeposito.size();
-        Assertions.assertNotEquals(0,cantidad);
+        Assertions.assertEquals(1,cantidad);
     }
     @Test
     public void testAddProductoMonedas(){
         Monedas generica = new Monedas(10000) {
             @Override
             public int getValor() {
-                return super.getValor();
+                return 10000;
             }
         };
+        int cantidadTest = 100;
         Deposito<Monedas> monedasDeposito = new Deposito<>();
-        monedasDeposito.addProducto(generica);
-        int cantidad = monedasDeposito.size();
-        Assertions.assertNotEquals(0,cantidad);
+        for (int i = 0; i != cantidadTest; i++) {
+            monedasDeposito.addProducto(generica);
+        }
+            int cantidad = monedasDeposito.size();
+            Assertions.assertEquals(cantidadTest, cantidad);
     }
 
 
