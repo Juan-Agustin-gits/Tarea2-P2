@@ -1,5 +1,7 @@
 package codigo;
-
+/**
+ * Herencia de Bebida con sabor "fanta"
+ */
 public class Fanta extends Bebida{
     public Fanta(int n){
         super(n);
@@ -10,6 +12,6 @@ public class Fanta extends Bebida{
 
     @Override
     public String getSabor() {
-        return "Fanta";
+        return "fanta";
     }
 }

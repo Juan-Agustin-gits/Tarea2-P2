@@ -2,6 +2,11 @@
 package codigo;
 
 import java.util.ArrayList;
+
+/**
+ *
+ * @param <T> Un tipo T generico que permite tener diferentes depositos de varios tipos
+ */
 public class Deposito<T> {
     private ArrayList<T> array;
 

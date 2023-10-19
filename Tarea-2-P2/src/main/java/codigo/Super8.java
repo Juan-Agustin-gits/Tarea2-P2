@@ -1,5 +1,7 @@
 package codigo;
-
+/**
+ * Herencia de Dulces con sabor "super8"
+ */
 public class Super8 extends Dulces{
 
     public Super8(int n) {
@@ -10,7 +12,7 @@ public class Super8 extends Dulces{
     }
     @Override
     public String getSabor() {
-        return "Super8";
+        return "super8";
     }
 
 }
