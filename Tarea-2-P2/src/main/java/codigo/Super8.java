@@ -5,7 +5,7 @@ package codigo;
 public class Super8 extends Dulces{
 
     /**
-     * @param n
+     *@param n
      */
     public Super8(int n) {
         super(n);
