@@ -97,11 +97,11 @@ public class Expendedor {
                 sabor=fanta.getProducto().getSabor();
                 return fanta.getProducto();
             }
-            else if (super8.size() == 0) {
+            else if (fanta.size() == 0) {
                 monvu.addProducto(pago);
                 throw new NoHayProductoException("No se puede comprar, no quedan productos");
             }
-            else if (pago.getValor() < super8.getProducto().getPrecio()) {
+            else if (pago.getValor() < fanta.getProducto().getPrecio()) {
                 monvu.addProducto(pago);
                 throw new PagoInsuficienteException("La moneda NO alcanza");
             }
