@@ -10,7 +10,7 @@ abstract public class Productos {
     /**
      *
      * @param serie Definira un numero para cada producto de un Deposito
-     *              del mismo tipo del producto
+     *              del mismo tipo del producton
      */
     public Productos(int serie) {
         this.serie=serie;
