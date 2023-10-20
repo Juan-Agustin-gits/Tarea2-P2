@@ -158,7 +158,7 @@ public class Expendedor {
     /**
      * @return moneda de valor 100 o la moneda ingresada
      */
-    public Monedas getVuelto() {
+    public Monedas getVuelto() throws NoHayProductoException {
         return monvu.getProducto();
     }
 

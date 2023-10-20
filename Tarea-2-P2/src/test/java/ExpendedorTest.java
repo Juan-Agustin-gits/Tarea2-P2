@@ -28,8 +28,7 @@ public class ExpendedorTest {
             Assertions.assertTrue(e instanceof NoHayProductoException);
         }
     }
-    //revisa el sig test
-    /*@Test
+    @Test
     public void getVueltoBebidaCara() throws NoHayProductoException, PagoInsuficienteException, PagoIncorrectoException{
             compradorTest = new Comprador(moneda1000Test,3,expendedorTest);
             expendedorTest.comprarProducto(3,moneda1000Test);

@@ -1,7 +1,4 @@
-import codigo.Deposito;
-import codigo.Bebida;
-import codigo.Dulces;
-import codigo.Monedas;
+import codigo.*;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.Assertions;
 
@@ -32,7 +29,7 @@ public class DepositoTest {
         Assertions.assertEquals(1,cantidad);
     }
     @Test
-    public void testGetProductoBebida() {
+    public void testGetProductoBebida() throws NoHayProductoException {
         //para hacer esta prueba usamos una bebida generica
         Bebida generica = new Bebida(1234) {
             @Override

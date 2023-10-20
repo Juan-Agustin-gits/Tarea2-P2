@@ -26,12 +26,12 @@ public class Deposito<T> {
     /**
      * @return Objeto, en la posicion 0, que se quita del Deposito
      */
-    public T getProducto() { //pese a que es getproducto tmbn puede servir como get moneda
+    public T getProducto()  throws NoHayProductoException { //pese a que es getproducto tmbn puede servir como get moneda
         if (array.size() != 0) {
             return array.remove(0);
         }
         else{
-            return null;
+            throw new NoHayProductoException("No hay productos en el depósito");
         }
     }
 
