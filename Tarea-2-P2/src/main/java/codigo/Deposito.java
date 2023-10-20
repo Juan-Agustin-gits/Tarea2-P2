@@ -22,7 +22,12 @@ public class Deposito<T> {
     public void addProducto(T nueva) {
         array.add(nueva);
     }
-
+    /**
+     * @return Tamaño del Deposito
+     */
+    public int size(){
+        return array.size();
+    }
     /**
      * @return Objeto, en la posicion 0, que se quita del Deposito
      */
@@ -35,11 +40,6 @@ public class Deposito<T> {
         }
     }
 
-    /**
-     * @return Tamaño del Deposito
-     */
-    public int size(){
-        return array.size();
-    }
+
 
 }

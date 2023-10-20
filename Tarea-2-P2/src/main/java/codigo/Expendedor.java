@@ -50,7 +50,7 @@ public class Expendedor {
         if (pago == null) {
             throw new PagoIncorrectoException("Por favor ingresa una moneda valida");
         }
-        if (n==Eleccion.COCA.getSelec()){
+        if (n == Eleccion.COCA.getSelec()){
             if(coca.size() !=0 && pago.getValor() >= coca.getProducto().getPrecio()){
 
                 for(int i=pago.getValor()-coca.getProducto().getPrecio(); i>0; i=i-100 ){
@@ -69,7 +69,7 @@ public class Expendedor {
                 throw new PagoInsuficienteException("La moneda NO alcanza");
             }
         }
-        if (n==Eleccion.SPRITE.getSelec()){
+        if (n == Eleccion.SPRITE.getSelec()){
             if( sprite.size() !=0 && pago.getValor() >= sprite.getProducto().getPrecio() ){
 
                 for(int i= pago.getValor()-sprite.getProducto().getPrecio(); i>0; i=i-100 ){
@@ -88,7 +88,7 @@ public class Expendedor {
                 throw new PagoInsuficienteException("La moneda NO alcanza");
             }
         }
-        if (n==Eleccion.FANTA.getSelec()){
+        if (n == Eleccion.FANTA.getSelec()){
             if (fanta.size() !=0 && pago.getValor() >= fanta.getProducto().getPrecio()) {
                 for(int i= pago.getValor()-fanta.getProducto().getPrecio(); i>0; i=i-100 ){
                     monvu.addProducto(moneda100);
@@ -107,7 +107,7 @@ public class Expendedor {
             }
 
         }
-        if (n==Eleccion.SUPER.getSelec()){
+        if (n == Eleccion.SUPER.getSelec()){
             if( super8.size() !=0 && pago.getValor() >= super8.getProducto().getPrecio() ){
 
 
@@ -128,9 +128,8 @@ public class Expendedor {
             }
 
         }
-        // En vez de poner sniker.getProducto().getPrecio() podríamos poner Eleccion.SUPER.getPrecio()
         if (n == Eleccion.SNICKERS.getSelec()){
-            if( sniker.size() !=0 && pago.getValor() >= sniker.getProducto().getPrecio() ){
+            if( sniker.size() != 0 && pago.getValor() >= sniker.getProducto().getPrecio() ){
 
                 for(int i = pago.getValor()-sniker.getProducto().getPrecio(); i>0; i=i-100 ){
                     monvu.addProducto(moneda100);
@@ -175,6 +174,9 @@ public class Expendedor {
      */
     public int getVueltoTotal(){
         return vuelto;
+    }
+    public Deposito<Monedas> getMonvu(){
+        return monvu;
     }
 }
 

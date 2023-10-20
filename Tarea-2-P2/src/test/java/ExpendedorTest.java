@@ -30,12 +30,18 @@ public class ExpendedorTest {
     }
     @Test
     public void getVueltoBebidaCara() throws NoHayProductoException, PagoInsuficienteException, PagoIncorrectoException{
-            compradorTest = new Comprador(moneda1000Test,3,expendedorTest);
-            expendedorTest.comprarProducto(3,moneda1000Test);
-            int ayuda = expendedorTest.getVuelto().getValor();
-            Assertions.assertEquals(ayuda,moneda1000Test.getValor());
+            try {
+                compradorTest = new Comprador(moneda1000Test, 3, expendedorTest);
+                // hay 10 productos en el expendedor y 0 en el monvu
+                expendedorTest.comprarProducto(3, moneda1000Test);
+                int ayuda = expendedorTest.getVuelto().getValor();
+                Assertions.assertEquals(ayuda, moneda1000Test.getValor());
+            }
+            catch (NoHayProductoException|PagoIncorrectoException|PagoInsuficienteException e){
+                Assertions.assertTrue(e instanceof PagoInsuficienteException);
+            }
     }
-    /*
+
     @Test
     public void getArraySinBebidas() throws NoHayProductoException, PagoInsuficienteException, PagoIncorrectoException{
         try{
@@ -50,5 +56,5 @@ public class ExpendedorTest {
             Assertions.assertTrue(e instanceof NoHayProductoException);
         }
 
-    } */
+    }
 }

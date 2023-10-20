@@ -28,7 +28,7 @@ public class Comprador {
         this.nimIdent=nimIdent;
         this.expendedor = expendedor;
         saborcito = expendedor.ultimacomida();
-        while(expendedor.getVuelto() != null){
+        while(expendedor.getVuelto() != null ){
             Monedas monedaVuelto = expendedor.getVuelto();
             vuelto += monedaVuelto.getValor();
         }
