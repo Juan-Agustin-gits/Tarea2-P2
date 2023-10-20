@@ -6,18 +6,11 @@ package codigo;
  */
 public abstract class Monedas implements Comparable<Monedas>{
     private int valor;
-
-    /**
-     * @param valor
-     */
     public Monedas(int valor) {
         this.valor = valor;
     }
     public Monedas(){
     }
-    /**
-     * @return Valor de la moneda
-     */
     public abstract int getValor();
     /**
      * @param otra ( de tipo Moneda ), Objeto a comparar .

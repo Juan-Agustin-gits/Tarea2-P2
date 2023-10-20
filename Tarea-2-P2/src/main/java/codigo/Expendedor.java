@@ -43,7 +43,7 @@ public class Expendedor {
      * @throws PagoInsuficienteException Exception para cuando el valor de la moneda
      * seleccionada sea menor al del producto elegido
      * @return Devuelve el Producto y el vuelto o la misma moneda si es que no es mayor
-     * o igual al precio del Producto o nulo si es que no quedan Productos en el deposito
+     * o igual al precio del Producto o si es que no quedan Productos en el deposito
      */
     public Productos comprarProducto(int n, Monedas pago) throws PagoIncorrectoException, NoHayProductoException, PagoInsuficienteException {
         this.n=n;
@@ -153,25 +153,14 @@ public class Expendedor {
             }
         return null;
     }
-
-    /**
-     * @return moneda de valor 100 o la moneda ingresada
-     */
     public Monedas getVuelto() throws NoHayProductoException {
         return monvu.getProducto();
     }
 
-    /**
-     *
-     * @return sabor del último Producto consumido
-     */
     public String ultimacomida(){
         return sabor;
     }
 
-    /**
-     * @return vuelto
-     */
     public int getVueltoTotal(){
         return vuelto;
     }

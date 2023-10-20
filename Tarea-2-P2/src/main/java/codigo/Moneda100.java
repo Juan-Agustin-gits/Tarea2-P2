@@ -7,10 +7,6 @@ public class Moneda100 extends Monedas{
     public Moneda100(){
         super();
     }
-
-    /**
-     * @return Valor de la moneda : $100
-     */
     @Override
     public int getValor() {
         return 100;

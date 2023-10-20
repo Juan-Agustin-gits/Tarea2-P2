@@ -15,14 +15,6 @@ abstract public class Productos {
     public Productos(int serie) {
         this.serie=serie;
     }
-
-    /**
-     * @return String que representa el sabor del Producto ( Metodo abstracto )
-     */
     public abstract String getSabor();
-
-    /**
-     * @return Precio del Producto ( Metodo abstracto )
-     */
     public abstract int getPrecio();
 }

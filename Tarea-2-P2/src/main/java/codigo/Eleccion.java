@@ -11,26 +11,13 @@ public enum Eleccion {
     SNICKERS(5,1000);
     private int selec;
     private int precio;
-
-    /**
-     * @param selec
-     * @param precio
-     */
     Eleccion(int selec, int precio){
         this.selec=selec;
         this.precio=precio;
     }
-
-    /**
-     * @return Precio
-     */
     public int getPrecio() {
         return precio;
     }
-
-    /**
-     * @return Seleccion
-     */
     public int getSelec() {
         return selec;
     }
