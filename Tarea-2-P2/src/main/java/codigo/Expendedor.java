@@ -8,6 +8,7 @@ public class Expendedor {
     private int cantidadProductos;
     private Monedas pago;
     private Moneda100 moneda100;
+    private String sabor;
     private int vuelto = 0;
     private Deposito<CocaCola> coca = new Deposito<>();
     private Deposito<Sprite> sprite = new Deposito<>();
@@ -56,12 +57,15 @@ public class Expendedor {
                     monvu.addProducto(moneda100);
                     vuelto=vuelto+100;
                 }
+                sabor=coca.getProducto().getSabor();
                 return coca.getProducto();
             }
             else if (coca.size() == 0) {
+                monvu.addProducto(pago);
                 throw new NoHayProductoException("No se puede comprar, no quedan productos");
             }
             else if (pago.getValor() < coca.getProducto().getPrecio()) {
+                monvu.addProducto(pago);
                 throw new PagoInsuficienteException("La moneda NO alcanza");
             }
         }
@@ -72,28 +76,33 @@ public class Expendedor {
                     monvu.addProducto(moneda100);
                     vuelto=vuelto+100;
                 }
+                sabor=sprite.getProducto().getSabor();
                 return sprite.getProducto();
             }
             else if (sprite.size() == 0) {
+                monvu.addProducto(pago);
                 throw new NoHayProductoException("No se puede comprar, no quedan productos");
             }
             else if (pago.getValor() < sprite.getProducto().getPrecio()) {
+                monvu.addProducto(pago);
                 throw new PagoInsuficienteException("La moneda NO alcanza");
             }
         }
         if (n==Eleccion.FANTA.getSelec()){
             if (fanta.size() !=0 && pago.getValor() >= fanta.getProducto().getPrecio()) {
-
                 for(int i= pago.getValor()-fanta.getProducto().getPrecio(); i>0; i=i-100 ){
                     monvu.addProducto(moneda100);
                     vuelto=vuelto+100;
                 }
+                sabor=fanta.getProducto().getSabor();
                 return fanta.getProducto();
             }
             else if (super8.size() == 0) {
+                monvu.addProducto(pago);
                 throw new NoHayProductoException("No se puede comprar, no quedan productos");
             }
             else if (pago.getValor() < super8.getProducto().getPrecio()) {
+                monvu.addProducto(pago);
                 throw new PagoInsuficienteException("La moneda NO alcanza");
             }
 
@@ -106,12 +115,15 @@ public class Expendedor {
                     monvu.addProducto(moneda100);
                     vuelto=vuelto+100;
                 }
+                sabor=super8.getProducto().getSabor();
                 return super8.getProducto();
             }
             else if ( super8.size() == 0 ) {
+                monvu.addProducto(pago);
                 throw new NoHayProductoException("No se puede comprar, no quedan productos");
             }
             else if (pago.getValor() < super8.getProducto().getPrecio()) {
+                monvu.addProducto(pago);
                 throw new PagoInsuficienteException("La moneda NO alcanza");
             }
 
@@ -124,26 +136,38 @@ public class Expendedor {
                     monvu.addProducto(moneda100);
                     vuelto=vuelto+100;
                 }
+                sabor=sniker.getProducto().getSabor();
                 return sniker.getProducto();
             }
             else if (sniker.size() == 0) {
+                monvu.addProducto(pago);
                 throw new NoHayProductoException("No se puede comprar, no quedan productos");
             }
             else if (pago.getValor() < sniker.getProducto().getPrecio()) {
+                monvu.addProducto(pago);
                 throw new PagoInsuficienteException("La moneda NO alcanza");
             }
-            else {
-                return null;
-            }
         }
+        else if(n!=1&&n!=2&&n!=3&&n!=4&&n!=5){
+                monvu.addProducto(pago);
+                throw new NoHayProductoException("Elección inexistente");
+            }
         return null;
     }
 
     /**
-     * @return moneda de valor 100
+     * @return moneda de valor 100 o la moneda ingresada
      */
     public Monedas getVuelto() {
         return monvu.getProducto();
+    }
+
+    /**
+     *
+     * @return sabor del último Producto consumido
+     */
+    public String ultimacomida(){
+        return sabor;
     }
 
     /**

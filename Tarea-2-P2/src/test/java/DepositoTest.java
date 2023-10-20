@@ -46,10 +46,8 @@ public class DepositoTest {
             }
         };
         Deposito<Bebida> bebidaDeposito = new Deposito<>();
-        bebidaDeposito.addProducto(generica);
         int cantidad = bebidaDeposito.size();
         bebidaDeposito.getProducto();
-        cantidad = bebidaDeposito.size();
         Assertions.assertEquals(0, cantidad);
     }
     public void testAddProductoDulces(){

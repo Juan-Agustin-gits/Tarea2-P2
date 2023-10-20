@@ -9,7 +9,7 @@ public class Comprador {
     //aca debo cambiar el nimIdent
     private int nimIdent;
     private Expendedor expendedor;
-    private Productos productoComprado;
+    private String saborcito;
     private int vuelto;
 
     /**
@@ -27,7 +27,7 @@ public class Comprador {
         this.moneda = moneda;
         this.nimIdent=nimIdent;
         this.expendedor = expendedor;
-        productoComprado = expendedor.comprarProducto(nimIdent,moneda);
+        saborcito = expendedor.ultimacomida();
         while(expendedor.getVuelto() != null){
             Monedas monedaVuelto = expendedor.getVuelto();
             vuelto += monedaVuelto.getValor();
@@ -44,15 +44,10 @@ public class Comprador {
     public Expendedor getExpendedor() {
         return expendedor;
     }
-
-    public Productos getProductoComprado() {
-        return productoComprado;
-    }
-
     public int getVuelto(){
         return vuelto;
     }
-    public String getSabor(){
-        return productoComprado.getSabor();
+    public String QueSabor(){
+        return saborcito;
     }
 }
