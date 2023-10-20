@@ -9,7 +9,7 @@ public class main {
     public static void main(String[] args){
         //Falta hacer las pruebas aqui y hacer los test correspondientes
         Expendedor expendedor = new Expendedor(10);
-        Moneda1500 moneda1500 = new Moneda1500(1500);
+        Moneda1500 moneda1500 = new Moneda1500();
         try {
             Comprador comprador = new Comprador(moneda1500,3,expendedor);
         } catch (NoHayProductoException | PagoInsuficienteException | PagoIncorrectoException e) {

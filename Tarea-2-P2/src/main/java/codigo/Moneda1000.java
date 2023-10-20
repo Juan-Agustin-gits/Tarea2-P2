@@ -4,11 +4,8 @@ package codigo;
  * Herencia de Moneda con valor 1000
  */
 public class Moneda1000 extends Monedas{
-    /**
-     * @param valor
-     */
-    public Moneda1000(int valor){
-        super(valor);
+    public Moneda1000(){
+        super();
     }
 
     /**

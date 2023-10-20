@@ -4,19 +4,52 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 public class ExpendedorTest {
-    Moneda1500 moneda1500Test = new Moneda1500(1500);
+    Moneda1000 moneda1000Test = new Moneda1000();
+    Moneda1500 moneda1500Test = new Moneda1500();
     Expendedor expendedorTest = new Expendedor(10);
     Comprador compradorTest;
 
-    @BeforeEach // Ejecutara este codigo antes de todos los test
-    void setUp() throws NoHayProductoException, PagoInsuficienteException, PagoIncorrectoException {
-        compradorTest = new Comprador(moneda1500Test,3,expendedorTest);
-    }
-
     @Test
-    public void getVueltoTotalTest(){
-        int precio = compradorTest.getProductoComprado().getPrecio();
-        int vuelto = moneda1500Test.getValor() - precio;
-        Assertions.assertEquals(vuelto,compradorTest.getVuelto());
+    public void getVueltoTotalTest() throws NoHayProductoException, PagoInsuficienteException, PagoIncorrectoException {
+        compradorTest = new Comprador(moneda1500Test,4,expendedorTest);
+        expendedorTest.comprarProducto(4,moneda1500Test);
+        int vuelto = expendedorTest.getVueltoTotal();
+        Assertions.assertEquals(1000,vuelto);
     }
+    @Test
+    public void getVueltoBebidaNoDisponible() throws NoHayProductoException, PagoInsuficienteException, PagoIncorrectoException {
+        try {
+            compradorTest = new Comprador(moneda1500Test,6,expendedorTest);
+            expendedorTest.comprarProducto(6, moneda1500Test);
+            int ayuda = expendedorTest.getVuelto().getValor();
+            Assertions.assertEquals(ayuda, moneda1500Test.getValor());
+        }
+        catch (NoHayProductoException | PagoIncorrectoException | PagoInsuficienteException e){
+            Assertions.assertTrue(e instanceof NoHayProductoException);
+        }
+    }
+    //revisa el sig test
+    /*@Test
+    public void getVueltoBebidaCara() throws NoHayProductoException, PagoInsuficienteException, PagoIncorrectoException{
+            compradorTest = new Comprador(moneda1000Test,3,expendedorTest);
+            expendedorTest.comprarProducto(3,moneda1000Test);
+            int ayuda = expendedorTest.getVuelto().getValor();
+            Assertions.assertEquals(ayuda,moneda1000Test.getValor());
+    }
+    /*
+    @Test
+    public void getArraySinBebidas() throws NoHayProductoException, PagoInsuficienteException, PagoIncorrectoException{
+        try{
+            compradorTest = new Comprador(moneda1500Test,1, expendedorTest);
+            for(int i=0; i<11; i++){
+                expendedorTest.comprarProducto(1,moneda1500Test);
+            }
+            int ayuda = expendedorTest.getVuelto().getValor();
+            Assertions.assertEquals(ayuda,moneda1500Test.getValor());
+        }
+        catch (NoHayProductoException | PagoIncorrectoException | PagoInsuficienteException e){
+            Assertions.assertTrue(e instanceof NoHayProductoException);
+        }
+
+    } */
 }

@@ -13,6 +13,8 @@ public abstract class Monedas implements Comparable<Monedas>{
     public Monedas(int valor) {
         this.valor = valor;
     }
+    public Monedas(){
+    }
     /**
      * @return Valor de la moneda
      */

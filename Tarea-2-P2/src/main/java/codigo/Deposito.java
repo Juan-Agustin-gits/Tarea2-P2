@@ -30,7 +30,9 @@ public class Deposito<T> {
         if (array.size() != 0) {
             return array.remove(0);
         }
-        return null;
+        else{
+            return null;
+        }
     }
 
     /**
